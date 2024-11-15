@@ -60,6 +60,9 @@
   "testPresets": [
     {
       "name": "test-base",
+      "execution": {
+        "timeout": 10
+      },
       "output": {
         "verbosity": "extra"
       }
