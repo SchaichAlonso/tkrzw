@@ -189,7 +189,8 @@ if (TKRZW_TESTS)
     enable_testing()
     find_package(GTest CONFIG REQUIRED)
     
-    set(TEST_NAMES tkrzw_sys_config_test tkrzw_lib_common_test tkrzw_str_util_test tkrzw_hash_util_test tkrzw_time_util_test tkrzw_thread_util_test tkrzw_logger_test tkrzw_compress_test tkrzw_containers_test tkrzw_key_comparators_test tkrzw_file_util_test tkrzw_file_std_test tkrzw_file_mmap_test tkrzw_file_pos_test tkrzw_file_poly_test tkrzw_message_queue_test tkrzw_dbm_common_impl_test tkrzw_dbm_ulog_test tkrzw_dbm_hash_impl_test tkrzw_dbm_tree_impl_test tkrzw_dbm_tree_test tkrzw_dbm_hash_test tkrzw_dbm_skip_impl_test tkrzw_dbm_skip_test tkrzw_dbm_tiny_test tkrzw_dbm_baby_test tkrzw_dbm_cache_test tkrzw_dbm_std_test tkrzw_dbm_poly_test tkrzw_dbm_shard_test tkrzw_dbm_async_test tkrzw_index_test tkrzw_cmd_util_test tkrzw_langc_test)
+    # tkrzw_langc_test loads lots of variables from tkrzw.dll, which isn't implemented yet.
+    set(TEST_NAMES tkrzw_sys_config_test tkrzw_lib_common_test tkrzw_str_util_test tkrzw_hash_util_test tkrzw_time_util_test tkrzw_thread_util_test tkrzw_logger_test tkrzw_compress_test tkrzw_containers_test tkrzw_key_comparators_test tkrzw_file_util_test tkrzw_file_std_test tkrzw_file_mmap_test tkrzw_file_pos_test tkrzw_file_poly_test tkrzw_message_queue_test tkrzw_dbm_common_impl_test tkrzw_dbm_ulog_test tkrzw_dbm_hash_impl_test tkrzw_dbm_tree_impl_test tkrzw_dbm_tree_test tkrzw_dbm_hash_test tkrzw_dbm_skip_impl_test tkrzw_dbm_skip_test tkrzw_dbm_tiny_test tkrzw_dbm_baby_test tkrzw_dbm_cache_test tkrzw_dbm_std_test tkrzw_dbm_poly_test tkrzw_dbm_shard_test tkrzw_dbm_async_test tkrzw_index_test tkrzw_cmd_util_test)
     foreach(text_name IN LISTS TEST_NAMES)
         TkrzwAddExecutable(NAME ${text_name} SOURCES ${text_name}.cc LIBRARIES GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
         add_test(NAME ${text_name} COMMAND ${text_name})
