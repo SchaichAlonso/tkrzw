@@ -59,12 +59,16 @@
   ],
   "testPresets": [
     {
-      "name": "ninja-release",
-      "configurePreset": "ninja",
-      "configuration": "Release",
+      "name": "test-base",
       "output": {
         "verbosity": "extra"
       }
+    },
+    {
+      "name": "ninja-release",
+      "configurePreset": "ninja",
+      "configuration": "Release",
+      "inherits": ["test-base"]
     },
     {
       "name": "ninja-debug",
@@ -75,9 +79,7 @@
       "name": "msvc-release",
       "configurePreset": "msvc",
       "configuration": "Release",
-      "output": {
-        "verbosity": "extra"
-      }
+      "inherits": ["test-base"]
     },
     {
       "name": "msvc-debug",
