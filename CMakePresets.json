@@ -65,7 +65,8 @@
       },
       "output": {
         "verbosity": "extra"
-      }
+      },
+      "hidden": true
     },
     {
       "name": "ninja-release",
